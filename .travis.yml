@@ -1,0 +1,14 @@
+language: python
+python:
+  - "2.7"
+install:
+  - pip install numpy svmlight nose coverage
+  - pip install scipy scikit-learn
+  # command to run tests
+script: python nltk/test/runtests.py
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#nltk"
+    on_success: change
+  email: false

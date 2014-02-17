@@ -10,8 +10,8 @@ install:
 # command to run tests
 script: python nltk/test/runtests.py
 notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#nltk"
-    on_success: change
   email: false
+#  irc:
+#    channels:
+#      - "irc.freenode.org#nltk"
+#    on_success: change

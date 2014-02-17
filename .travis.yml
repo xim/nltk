@@ -10,7 +10,7 @@ before_install:
   - dpkg -L python-matplotlib | grep pylab
 install:
   - pip install svmlight #nose coverage PyYAML --use-mirrors
-  - python -c "import nltk ; nltk.download(['book_grammars', 'brown', 'cess_cat', 'cess_esp', 'chat80', 'city_database', 'comtrans', 'conll2007', 'floresta', 'framenet_v15', 'genesis', 'gutenberg', 'inaugural', 'indian', 'jeita', 'knbc', 'machado', 'nps_chat', 'mac_morpho', 'maxent_treebank_pos_tagger', 'ptb', 'punkt', 'sample_grammars', 'sinica_treebank', 'stopwords', 'udhr', 'wordnet'])"
+  - python -c "import nltk ; nltk.download(['abc', 'book_grammars', 'brown', 'cess_cat', 'cess_esp', 'chat80', 'city_database', 'comtrans', 'conll2000', 'conll2002', 'conll2007', 'cmudict', 'dependency_treebank', 'floresta', 'framenet_v15', 'genesis', 'gutenberg', 'ieer', 'inaugural', 'indian', 'jeita', 'knbc', 'machado', 'names', 'nps_chat', 'mac_morpho', 'maxent_treebank_pos_tagger', 'movie_reviews', 'ppattach', 'propbank', 'ptb', 'punkt', 'qc', 'reuters', 'rslp', 'rte', 'sample_grammars', 'senseval', 'semcor', 'shakespeare', 'sinica_treebank', 'state_union', 'stopwords', 'timit', 'toolbox', 'treebank', 'udhr', 'universal_tagset', 'verbnet', 'webtext', 'wordnet', 'wordnet_ic'])"
 # command to run tests
 script: python nltk/test/runtests.py
 notifications:

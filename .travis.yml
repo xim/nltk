@@ -6,10 +6,10 @@ branches:
     - master
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -qq python-scipy python-matplotlib python-numpy
+  - sudo apt-get install --no-install-recommends -qq python-scipy python-matplotlib python-numpy
 install:
-  - pip install numpy svmlight nose coverage PyYAML --use-mirrors
-  - pip install scipy scikit-learn --use-mirrors
+  - pip install svmlight nose coverage PyYAML --use-mirrors
+  - pip install scikit-learn --use-mirrors
 # command to run tests
 script: python nltk/test/runtests.py
 notifications:

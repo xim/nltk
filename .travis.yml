@@ -11,7 +11,7 @@ before_install:
   - sudo apt-get install --no-install-recommends -qq python-scipy python-matplotlib python-numpy python-scikits-learn python-coverage python-yaml python-tk python-joblib python3-scipy python3-numpy python3-tk
 install:
   - pip install svmlight
-  - python -V | grep -q 3 && pip install matplotlib
+  - python -V 2>&1 | grep -q 3 && pip install matplotlib || true
   - python -c "import nltk ; nltk.download(['abc', 'book_grammars', 'brown', 'cess_cat', 'cess_esp', 'chat80', 'city_database', 'comtrans', 'conll2000', 'conll2002', 'conll2007', 'cmudict', 'dependency_treebank', 'floresta', 'framenet_v15', 'genesis', 'gutenberg', 'ieer', 'inaugural', 'indian', 'jeita', 'knbc', 'large_grammars', 'machado', 'names', 'nps_chat', 'mac_morpho', 'maxent_treebank_pos_tagger', 'movie_reviews', 'ppattach', 'propbank', 'ptb', 'punkt', 'qc', 'reuters', 'rslp', 'rte', 'sample_grammars', 'senseval', 'semcor', 'shakespeare', 'sinica_treebank', 'state_union', 'stopwords', 'timit', 'toolbox', 'treebank', 'udhr', 'universal_tagset', 'verbnet', 'webtext', 'wordnet', 'wordnet_ic', 'words'])"
 before_script:
   - export PYTHONPATH=.:/usr/lib/pymodules/python$TRAVIS_PYTHON_VERSION:/usr/lib/python$TRAVIS_PYTHON_VERSION/dist-packages

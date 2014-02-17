@@ -7,9 +7,10 @@ branches:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install --no-install-recommends -qq python-scipy python-matplotlib python-numpy python-scikits-learn python-nose python-coverage python-yaml python-tk
+  - dpkg -L python-matplotlib | grep pylab
 install:
   - pip install svmlight #nose coverage PyYAML --use-mirrors
-  - python -c 'import nltk ; nltk.download("all")'
+  - python -c "import nltk ; nltk.download(['gutenberg', 'inaugural', 'machado', 'ptb', 'punkt', 'stopwords'])"
 # command to run tests
 script: python nltk/test/runtests.py
 notifications:

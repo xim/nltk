@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+branches:
+  only:
+    - 2and3
+install:
+  - pip install numpy svmlight nose coverage PyYAML --use-mirrors
+  - pip install scipy scikit-learn --use-mirrors
+# command to run tests
+script: python nltk/test/runtests.py
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#nltk"
+    on_success: change
+  email: false
